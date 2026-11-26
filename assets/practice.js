@@ -25,6 +25,7 @@
     chips.appendChild(a);
   });
   document.getElementById("skill-title").textContent = K.SKILLS[skill];
+  document.getElementById("rewatch").href = "./#bai-" + ({ subject: 1, verb_pred: 1, s_es: 2, to_be: 3, negative: 4, question: 4 }[skill] || 1);
 
   var area = document.getElementById("set");
   var scoreEl = document.getElementById("score");

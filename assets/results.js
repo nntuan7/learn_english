@@ -29,13 +29,16 @@
         el("div", { class: "skill-name" }, [el("b", { text: K.SKILLS[k] }), el("span", { class: "tag", style: "background:" + color, text: label })]),
         el("div", { class: "bar" }, [el("i", { style: "width:" + (pct || 0) + "%;background:" + color })]),
         el("div", { class: "skill-detail" }, [el("span", { text: (pct === null ? "–" : pct + "%") + " · " + detail }),
-          el("a", { class: "btn " + (st.level === "good" ? "grey" : "orange") + " small", href: "luyen-tap.html?skill=" + k, text: "Luyện thêm" })])
+          el("a", { class: "btn " + (st.level === "good" ? "grey" : "orange") + " small", href: "luyen-tap.html?skill=" + k, text: "Luyện thêm" }),
+          el("a", { class: "btn small", href: "./#bai-" + LESSON_OF[k], text: "Xem lại bài " + LESSON_OF[k] })])
       ]));
     });
     var src = source === "server" ? "Kết quả lưu online (tất cả các máy)." : "Kết quả trên máy này.";
     var extra = sum && sum.days_active ? " Đã học " + sum.days_active + " ngày, trả lời " + sum.total_answers + " câu." : "";
     meta.textContent = src + extra + (weak.length ? " Mảng cần luyện: " + weak.map(function (k) { return K.SKILLS[k]; }).join(", ") + "." : "");
   }
+
+  var LESSON_OF = { subject: 1, verb_pred: 1, s_es: 2, to_be: 3, negative: 4, question: 4 };
 
   function load() {
     var s = store.settings();
