@@ -2,7 +2,7 @@
 
 Trang học tiếng Anh cho bé lớp 3, giảng bằng tiếng Việt:
 
-- **Bài giảng** (`index.html`): video ~7 phút về chủ ngữ, động từ, thì hiện tại đơn, am/is/are, do/does.
+- **Bài giảng** (`index.html`): video ~3,5 phút về chủ ngữ, động từ, thì hiện tại đơn, am/is/are, do/does.
 - **Học tương tác** (`bai-hoc.html`): Đoàn tàu câu (xếp chủ ngữ – động từ – phần thêm nếu có), Máy làm câu
   (chọn chủ ngữ + động từ + dạng câu, máy giải thích vì sao), Thử thách nhanh 10 câu có đếm giờ.
 - **Luyện thêm** (`luyen-tap.html`): ngân hàng câu hỏi theo 6 mảng (`assets/bank.js`), tự chọn mảng yếu nhất.
