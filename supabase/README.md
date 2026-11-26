@@ -7,7 +7,7 @@ trang web chỉ gọi 2 hàm, cả hai đều kiểm tra PIN (sai 10 lần thì 
   `a` câu trả lời, `ok` đúng/sai, `mode` main|practice, `n` lần thứ mấy của câu đó.
 - `get_summary(p_learner, p_pin)` – tổng hợp theo mảng.
 
-Mảng (skill): subject, verb_pred, to_be, s_es, negative, question.
+Mảng (skill): subject, verb_pred (= "Động từ"), to_be, s_es, negative, question.
 "Lần làm đầu" = các dòng `mode='main' and attempt_no=1`.
 
 Xem câu Kevin hay sai (chạy trong SQL editor của Supabase):

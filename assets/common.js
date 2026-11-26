@@ -5,7 +5,7 @@
 
   var SKILLS = {
     subject:   "Chủ ngữ",
-    verb_pred: "Động từ & vị ngữ",
+    verb_pred: "Động từ",
     to_be:     "am / is / are",
     s_es:      "Thêm s / es",
     negative:  "Phủ định don't / doesn't",

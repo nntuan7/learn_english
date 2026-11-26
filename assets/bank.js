@@ -27,14 +27,14 @@ window.KBANK = {
     ["[Động từ là] The baby sleeps. → ", { c: ["The baby", "sleeps"], a: "sleeps" }],
     ["[Động từ là] He is tall. → ", { c: ["He", "is", "tall"], a: "is" }],
     ["[Động từ là] We are happy. → ", { c: ["We", "are", "happy"], a: "are" }],
-    ["[Vị ngữ là] Tom plays football. → ", { c: ["Tom", "plays football", "football"], a: "plays football" }],
-    ["[Vị ngữ là] The cat drinks milk. → ", { c: ["The cat", "drinks milk", "milk"], a: "drinks milk" }],
-    ["[Vị ngữ là] My mom cooks dinner. → ", { c: ["My mom", "cooks dinner", "dinner"], a: "cooks dinner" }],
-    ["[Vị ngữ là] They are students. → ", { c: ["They", "are students", "students"], a: "are students" }],
-    ["[Vị ngữ là] I like ice cream. → ", { c: ["I", "like ice cream", "ice cream"], a: "like ice cream" }],
+    ["[Động từ là] Tom plays football. → ", { c: ["Tom", "plays", "football"], a: "plays" }],
+    ["[Động từ là] Birds fly. → ", { c: ["Birds", "fly"], a: "fly" }],
+    ["[Động từ là] My mom cooks dinner. → ", { c: ["My mom", "cooks", "dinner"], a: "cooks" }],
+    ["[Động từ là] They are students. → ", { c: ["They", "are", "students"], a: "are" }],
+    ["[Động từ là] I like ice cream. → ", { c: ["I", "like", "ice cream"], a: "like" }],
     ["[Gõ động từ] Lan sings a song. → ", { i: ["sings"] }],
     ["[Gõ động từ] We play games. → ", { i: ["play"] }],
-    ["[Gõ vị ngữ] The bird flies high. → ", { i: ["flies high"], w: 1 }]
+    ["[Gõ chủ ngữ] The baby cries. → ", { i: ["the baby"] }]
   ],
   to_be: [
     ["My mother ", { c: ["am", "is", "are"], a: "is" }, " a nurse."],

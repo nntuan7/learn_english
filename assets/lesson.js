@@ -116,36 +116,42 @@
   show(startIdx < 0 ? 0 : startIdx);
 
   // ================= 1. Train =================
+  // [chủ ngữ, động từ, phần thêm ("" nếu không cần), nghĩa]
   var TRAIN = [
     ["I", "play", "football.", "Tớ chơi bóng đá."],
+    ["Birds", "fly.", "", "Chim bay."],
     ["The cat", "drinks", "milk.", "Con mèo uống sữa."],
-    ["My mom", "cooks", "dinner.", "Mẹ tớ nấu bữa tối."],
-    ["Tom", "rides", "a bike.", "Tom đạp xe."],
     ["She", "is", "happy.", "Cô ấy vui."],
-    ["The birds", "sing", "in the tree.", "Những chú chim hót trên cây."],
+    ["The baby", "sleeps.", "", "Em bé ngủ."],
+    ["My mom", "cooks", "dinner.", "Mẹ tớ nấu bữa tối."],
     ["We", "are", "students.", "Chúng tớ là học sinh."],
+    ["Tom", "runs.", "", "Tom chạy."],
     ["My dad", "reads", "the news.", "Bố tớ đọc tin tức."]
   ];
-  var SLOT_HINT = ["Toa 1 cần CHỦ NGỮ: Ai? Cái gì?", "Toa 2 cần ĐỘNG TỪ: làm gì? là gì?", "Toa 3 là PHẦN CÒN LẠI."];
-  var ti = 0, filled = 0;
+  var SLOT_HINT = ["Toa 1 cần CHỦ NGỮ: Ai? Cái gì?", "Toa 2 cần ĐỘNG TỪ: làm gì? là gì?", "Toa 3 là PHẦN THÊM: cái gì? ở đâu?"];
+  var ti = 0, filled = 0, need = 3;
   var wagons = document.querySelectorAll("#train .wagon .slot");
   var cardsBox = document.getElementById("train-cards");
   var trainMsg = document.getElementById("train-msg");
-  var predBr = document.getElementById("pred-bracket");
   var trainNext = document.getElementById("train-next");
   var trainCount = document.getElementById("train-count");
 
   function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
 
   function loadTrain() {
-    var s = TRAIN[ti]; filled = 0;
-    wagons.forEach(function (w) { w.textContent = "?"; w.classList.remove("full"); });
-    predBr.classList.remove("show"); trainNext.hidden = true;
+    var s = TRAIN[ti]; filled = 0; need = s[2] ? 3 : 2;
+    wagons.forEach(function (w, k) {
+      var skip = k >= need;
+      w.textContent = skip ? "không cần" : "?"; w.classList.remove("full");
+      w.parentNode.classList.toggle("skip", skip);
+    });
+    trainNext.hidden = true;
     trainMsg.textContent = "Bấm vào từng thẻ để xếp lên đúng toa nhé!"; trainMsg.className = "msg";
     trainCount.textContent = "Câu " + (ti + 1) + " / " + TRAIN.length;
     cardsBox.innerHTML = "";
-    var order = shuffle([0, 1, 2]);
+    var order = shuffle(need === 3 ? [0, 1, 2] : [0, 1]);
     if (order.join() === "0,1,2") order = [2, 0, 1];
+    if (order.join() === "0,1") order = [1, 0];
     order.forEach(function (k) {
       var c = el("button", { class: "wcard", type: "button", text: s[k] });
       c.addEventListener("click", function () {
@@ -153,7 +159,7 @@
           wagons[k].textContent = s[k]; wagons[k].classList.add("full");
           c.classList.add("gone"); filled++;
           K.speak(s[k]);
-          if (filled === 3) done();
+          if (filled === need) done();
           else { trainMsg.textContent = "Đúng rồi! " + SLOT_HINT[filled]; trainMsg.className = "msg good"; }
         } else {
           c.classList.remove("shake"); void c.offsetWidth; c.classList.add("shake");
@@ -164,14 +170,13 @@
     });
   }
   function done() {
-    var s = TRAIN[ti];
-    predBr.classList.add("show");
+    var s = TRAIN[ti], sentence = s.slice(0, 3).filter(Boolean).join(" ");
     trainMsg.innerHTML = "";
     trainMsg.appendChild(el("span", { text: "Giỏi quá! " }));
-    trainMsg.appendChild(el("b", { text: s.slice(0, 3).join(" ") }));
-    trainMsg.appendChild(el("span", { text: " – " + s[3] + " Toa 2 + toa 3 gọi là VỊ NGỮ." }));
+    trainMsg.appendChild(el("b", { text: sentence }));
+    trainMsg.appendChild(el("span", { text: " – " + s[3] + (need === 2 ? " Câu này chỉ cần chủ ngữ + động từ là đủ ý!" : "") }));
     trainMsg.className = "msg good";
-    setTimeout(function () { K.speak(s.slice(0, 3).join(" ")); }, 500);
+    setTimeout(function () { K.speak(sentence); }, 500);
     trainNext.hidden = false;
     if (ti === TRAIN.length - 1) { trainNext.textContent = "Chơi lại từ đầu"; K.burst(); }
     else trainNext.textContent = "Câu tiếp theo →";

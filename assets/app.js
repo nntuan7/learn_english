@@ -7,19 +7,19 @@
   // Skill tag: part.s > table colSkill > exercise.skill
   var EX = [
     {
-      title: "Tìm chủ ngữ, động từ, vị ngữ",
+      title: "Tìm chủ ngữ và động từ",
       sub: "Gõ vào ô trống. Câu 1 đã làm mẫu.",
       type: "table",
-      colSkill: [null, "subject", "verb_pred", "verb_pred"],
-      head: [["Câu", "#8A8FA3"], ["Chủ ngữ (Ai? Cái gì?)", "var(--subj)"], ["Động từ", "var(--verb)"], ["Vị ngữ", "var(--pred)"]],
+      colSkill: [null, "subject", "verb_pred"],
+      head: [["Câu", "#8A8FA3"], ["Chủ ngữ (Ai? Cái gì?)", "var(--subj)"], ["Động từ (Làm gì? Là gì?)", "var(--verb)"]],
       rows: [
-        ["1. I play football.", "I", "play", "play football"],
-        ["2. The cat drinks milk.", { i: ["the cat"] }, { i: ["drinks"] }, { i: ["drinks milk"] }],
-        ["3. My mom cooks dinner.", { i: ["my mom"] }, { i: ["cooks"] }, { i: ["cooks dinner"] }],
-        ["4. They read books.", { i: ["they"] }, { i: ["read"] }, { i: ["read books"] }],
-        ["5. Tom rides a bike.", { i: ["tom"] }, { i: ["rides"] }, { i: ["rides a bike"] }],
-        ["6. She is happy.", { i: ["she"] }, { i: ["is"] }, { i: ["is happy"] }],
-        ["7. We are students.", { i: ["we"] }, { i: ["are"] }, { i: ["are students"] }]
+        ["1. I play football.", "I", "play"],
+        ["2. The cat drinks milk.", { i: ["the cat"] }, { i: ["drinks"] }],
+        ["3. Birds fly.", { i: ["birds"] }, { i: ["fly"] }],
+        ["4. They read books.", { i: ["they"] }, { i: ["read"] }],
+        ["5. Tom rides a bike.", { i: ["tom"] }, { i: ["rides"] }],
+        ["6. She is happy.", { i: ["she"] }, { i: ["is"] }],
+        ["7. The baby sleeps.", { i: ["the baby"] }, { i: ["sleeps"] }]
       ]
     },
     {
