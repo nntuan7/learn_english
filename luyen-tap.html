@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luyện thêm – Kevin học tiếng Anh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="logo" href="./"><img src="assets/logo.jpg" alt="Kevin" width="52" height="52" class="avatar"> Kevin học tiếng Anh</a>
+  <nav><a href="./">Bài giảng</a><a href="bai-tap.html">Bài tập</a><a class="on" href="luyen-tap.html">Luyện thêm</a><a href="ket-qua.html">Kết quả</a></nav>
+</div></header>
+
+<main class="wrap">
+  <h1>Luyện thêm: <span id="skill-title"></span></h1>
+  <p class="lead">Mỗi lần 8 câu, ưu tiên những câu Kevin chưa làm đúng. Chấm màu cho biết mảng nào còn yếu: <span style="color:var(--no)">đỏ</span> = cần luyện, <span style="color:var(--do)">cam</span> = gần đạt, <span style="color:var(--rest)">xanh</span> = tốt.</p>
+  <div class="skill-chips" id="skills"></div>
+  <section class="card">
+    <div id="set"></div>
+    <div class="ex-foot">
+      <button class="btn green" type="button" id="check">Kiểm tra</button>
+      <button class="btn grey" type="button" id="reveal">Xem đáp án</button>
+      <button class="btn" type="button" id="again">Bộ câu mới</button>
+      <span class="score" id="score"></span>
+    </div>
+  </section>
+</main>
+<footer>Làm đúng hết 8 câu là có pháo hoa! &middot; Kevin học tiếng Anh</footer>
+<canvas class="stars" id="fx"></canvas>
+<script src="assets/config.js"></script>
+<script src="assets/common.js"></script>
+<script src="assets/bank.js"></script>
+<script src="assets/practice.js"></script>
+</body>
+</html>

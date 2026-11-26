@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kết quả – Kevin học tiếng Anh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="logo" href="./"><img src="assets/logo.jpg" alt="Kevin" width="52" height="52" class="avatar"> Kevin học tiếng Anh</a>
+  <nav><a href="./">Bài giảng</a><a href="bai-tap.html">Bài tập</a><a href="luyen-tap.html">Luyện thêm</a><a class="on" href="ket-qua.html">Kết quả</a></nav>
+</div></header>
+
+<main class="wrap">
+  <h1>Kết quả của Kevin</h1>
+  <p class="lead">Tính theo <b>lần làm đầu tiên</b> của mỗi câu trong phần Bài tập. Mảng nào dưới 80% sẽ được gợi ý luyện thêm.</p>
+  <section class="card">
+    <div id="skills"></div>
+    <p class="ex-sub" id="meta" style="margin:14px 0 0"></p>
+  </section>
+  <section class="card">
+    <h2>Dành cho bố mẹ</h2>
+    <p class="ex-sub">Nhập PIN một lần trên máy của bé để kết quả được lưu online và xem được từ mọi máy.</p>
+    <div class="q" style="border:0">
+      <label>Tên <input class="t" id="learner" type="text" style="min-width:140px"></label>
+      <label>PIN <input class="t" id="pin" type="password" inputmode="numeric" autocomplete="off" style="min-width:140px"></label>
+      <button class="btn" type="button" id="save">Lưu</button>
+    </div>
+    <p id="status" style="margin:6px 0 0;font-weight:700"></p>
+  </section>
+</main>
+<footer>Kevin học tiếng Anh</footer>
+<script src="assets/config.js"></script>
+<script src="assets/common.js"></script>
+<script src="assets/results.js"></script>
+</body>
+</html>
