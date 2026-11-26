@@ -3,6 +3,8 @@
 Trang học tiếng Anh cho bé lớp 3, giảng bằng tiếng Việt:
 
 - **Bài giảng** (`index.html`): video ~7 phút về chủ ngữ, động từ, vị ngữ, thì hiện tại đơn, am/is/are, do/does.
+- **Học tương tác** (`bai-hoc.html`): Đoàn tàu câu (xếp chủ ngữ – động từ – phần còn lại), Máy làm câu
+  (chọn chủ ngữ + động từ + dạng câu, máy giải thích vì sao), Thử thách nhanh 10 câu có đếm giờ.
 - **Luyện thêm** (`luyen-tap.html`): ngân hàng câu hỏi theo 6 mảng (`assets/bank.js`), tự chọn mảng yếu nhất.
 - **Kết quả** (`ket-qua.html`): tỉ lệ đúng lần làm đầu theo từng mảng; nhập PIN để lưu online lên Supabase
   (xem `supabase/README.md`).

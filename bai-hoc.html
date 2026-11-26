@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Học tương tác – Kevin học tiếng Anh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="logo" href="./"><img src="assets/logo.jpg" alt="Kevin" width="52" height="52" class="avatar"> Kevin học tiếng Anh</a>
+  <nav><a href="./">Bài giảng</a><a class="on" href="bai-hoc.html">Học tương tác</a><a href="bai-tap.html">Bài tập</a><a href="luyen-tap.html">Luyện thêm</a><a href="ket-qua.html">Kết quả</a></nav>
+</div></header>
+
+<main class="wrap">
+  <h1>Học tương tác</h1>
+  <p class="lead">Ba trò chơi giúp Kevin nhớ bài: xếp câu lên đoàn tàu, tự làm câu bằng máy, và thử thách nhanh.</p>
+  <div class="tabs">
+    <button type="button">1. Đoàn tàu câu</button>
+    <button type="button">2. Máy làm câu</button>
+    <button type="button">3. Thử thách nhanh</button>
+  </div>
+
+  <section class="card pane" id="doan-tau">
+    <div class="pane-head"><h2>Đoàn tàu câu</h2><span class="count" id="train-count"></span></div>
+    <p class="ex-sub">Câu tiếng Anh giống một đoàn tàu: <b style="color:var(--subj)">chủ ngữ</b> → <b style="color:var(--verb)">động từ</b> → <b style="color:var(--rest)">phần còn lại</b>. Bấm các thẻ theo đúng thứ tự toa.</p>
+    <div class="train-wrap">
+      <div class="pred-bracket" id="pred-bracket"><span>VỊ NGỮ</span></div>
+      <div class="train" id="train">
+        <div class="wagon w1"><div class="chimney"></div><div class="wl">Chủ ngữ<small>Ai? Cái gì?</small></div><div class="slot">?</div><i></i><i></i></div>
+        <div class="wagon w2"><div class="wl">Động từ<small>Làm gì? Là gì?</small></div><div class="slot">?</div><i></i><i></i></div>
+        <div class="wagon w3"><div class="wl">Phần còn lại<small>...cái gì? ở đâu?</small></div><div class="slot">?</div><i></i><i></i></div>
+      </div>
+      <div class="rail"></div>
+    </div>
+    <div class="cards" id="train-cards"></div>
+    <p class="msg" id="train-msg"></p>
+    <button class="btn green" type="button" id="train-next" hidden>Câu tiếp theo →</button>
+  </section>
+
+  <section class="card pane" id="may-lam-cau" hidden>
+    <h2>Máy làm câu</h2>
+    <p class="ex-sub">Chọn chủ ngữ, việc làm và dạng câu. Máy sẽ làm câu đúng và giải thích vì sao.</p>
+    <div class="mgroup"><b>1. Ai?</b><div class="mrow" id="m-subj"></div></div>
+    <div class="mgroup"><b>2. Làm gì / thế nào?</b><div class="mrow" id="m-pred"></div></div>
+    <div class="mgroup"><b>3. Dạng câu</b><div class="mrow" id="m-form"></div></div>
+    <div class="mscreen">
+      <div class="mout" id="m-out"></div>
+      <div class="mans" id="m-ans" hidden></div>
+      <div class="mvi" id="m-vi"></div>
+      <div class="mwhy"><span>Vì sao?</span> <span id="m-why"></span></div>
+      <div class="mbtns">
+        <button class="btn" type="button" id="m-say">Nghe câu</button>
+        <button class="btn orange" type="button" id="m-random">Câu ngẫu nhiên</button>
+      </div>
+    </div>
+    <p class="ex-sub legend"><span class="tk tk-subj">chủ ngữ</span> <span class="tk tk-aux">trợ động từ / to be</span> <span class="tk tk-not">phủ định</span> <span class="tk tk-verb">động từ</span><span class="tk tk-end">s/es</span> <span class="tk tk-rest">phần còn lại</span></p>
+  </section>
+
+  <section class="card pane" id="thu-thach" hidden>
+    <h2>Thử thách nhanh</h2>
+    <div id="g-start-wrap">
+      <div id="g-start">
+        <p class="ex-sub">10 câu, mỗi câu 10 giây. Chọn từ đúng để điền vào chỗ trống: am / is / are, do / does, don't / doesn't, có thêm s hay không. Trả lời càng nhanh càng nhiều điểm!</p>
+        <p class="ex-sub">Kỷ lục của Kevin: <b id="g-best">0</b> điểm</p>
+        <button class="btn green big" type="button" id="g-go">Bắt đầu!</button>
+      </div>
+    </div>
+    <div id="game" hidden>
+      <div class="ginfo" id="g-info"></div>
+      <div class="gtime"><i id="g-bar"></i></div>
+      <div class="gq" id="g-q"></div>
+      <div class="gopts" id="g-opts"></div>
+      <p class="msg" id="g-feedback"></p>
+    </div>
+    <div id="g-end" hidden>
+      <div class="gstars" id="g-stars"></div>
+      <p class="gresult" id="g-result"></p>
+      <button class="btn green big" type="button" id="g-again">Chơi lại</button>
+      <a class="btn orange big" href="ket-qua.html">Xem kết quả</a>
+    </div>
+  </section>
+</main>
+<footer>Kevin học tiếng Anh</footer>
+<canvas class="stars" id="fx"></canvas>
+<script src="assets/config.js"></script>
+<script src="assets/common.js"></script>
+<script src="assets/lesson.js"></script>
+</body>
+</html>
